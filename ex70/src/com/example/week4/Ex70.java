@@ -10,24 +10,28 @@ import java.util.List;
  */
 public class Ex70 {
     public static List<Integer> combine(List<Integer> one, List<Integer> two){
-      List<Integer> lfinal= new ArrayList<Integer>();
-        lfinal.addAll(one);
-        lfinal.addAll(two);
-        return lfinal;
+        one.addAll(two);
+        return one;
     }
 
     public static void main(String[] args) {
 
         List<Integer> list1 = new ArrayList<Integer>();
         List<Integer> list2 = new ArrayList<Integer>();
-        List<Integer> list3 = new ArrayList<Integer>();
+        list1.add(4);
         list1.add(5);
-        list2.add(6);
-        list1.add(10);
-        list2.add(5);
-        list1.addAll(list2);
-        //System.out.println(list1);
-        System.out.println(combine(list1, list2));
+
+        list2.add(3);
+        list2.add(10);
+        list2.add(7);
+
+        combine(list1, list2);
+
+        System.out.println(list1); // prints [4, 3, 5, 10, 7]
+
+        System.out.println(list2); // prints [5, 10, 7]
+
+
 
 
 
